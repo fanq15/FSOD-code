@@ -1,4 +1,30 @@
-# A Pytorch Implementation of Detectron
+# A Pytorch Implementation of FSOD
+
+Please add `data` in the `fsod` directory and the structure is :
+
+  ```
+  YOUR_PATH
+      └── fsod
+            ├── code files
+            └── data
+                  ├──── fsod
+                  |       ├── annotations
+                  │       │       ├── fsod_train.json
+                  │       │       └── fsod_test.json
+                  │       └── images
+                  │             ├── part_1
+                  │             └── part_2
+                  │ 
+                  └──── pretrained_model
+                          └── model_final.pkl (from detectron model zoo: End-to-End Faster & Mask R-CNN Baselines R-50-C4 Faster 2x model)
+  ```  
+You can download the model_final.pkl from here: [Model link](https://dl.fbaipublicfiles.com/detectron/35857281/12_2017_baselines/e2e_faster_rcnn_R-50-C4_2x.yaml.01_34_56.ScPH0Z4r/output/train/coco_2014_train%3Acoco_2014_valminusminival/generalized_rcnn/model_final.pkl)
+
+
+Please note that this repository is only for episode training and evaluation on FSOD dataset. Other expriments on different datasets are in different evaluation settings and I will gradually merge them. Currently, the code only supports 1 image on 1 GPU for both training and evaluation.
+
+This repository is originally built on [roytseng-tw/Detectron.pytorch](https://github.com/roytseng-tw/Detectron.pytorch). You should set your enviroment setting under the guideline below. After that, you can directly run `sh all.sh` to train and evaluate the model.
+
 
 [![Build Status](https://travis-ci.com/roytseng-tw/Detectron.pytorch.svg?branch=master)](https://travis-ci.com/roytseng-tw/Detectron.pytorch)
 
