@@ -25,6 +25,18 @@ Please note that this repository is only for episode training and evaluation on 
 
 This repository is originally built on [roytseng-tw/Detectron.pytorch](https://github.com/roytseng-tw/Detectron.pytorch). You should set your enviroment setting under the guideline below. After that, you can directly run `sh all.sh` to train and evaluate the model.
 
+## Citation
+
+  If you use this dataset in your research, please cite this [paper](https://arxiv.org/pdf/1908.01998v1.pdf).
+
+  ```
+  @inproceedings{fan2020fsod,
+    title={Few-Shot Object Detection with Attention-RPN and Multi-Relation Detector},
+    author={Fan, Qi and Zhuo, Wei and Tang, Chi-Keung and Tai, Yu-Wing},
+    booktitle={CVPR},
+    year={2020}
+  }
+  ```
 
 [![Build Status](https://travis-ci.com/roytseng-tw/Detectron.pytorch.svg?branch=master)](https://travis-ci.com/roytseng-tw/Detectron.pytorch)
 
