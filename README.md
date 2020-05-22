@@ -85,8 +85,6 @@ This repository is originally built on [roytseng-tw/Detectron.pytorch](https://g
     year={2020}
   }
   ```
-  
-  I build the FSOD on the `detectron-tw` codebase (as shown below). Please build setup your environment as the following tutorials from `detectron-tw`.
 
 
 
