@@ -66,9 +66,9 @@ You can download the model_final.pkl from here: [Model link](https://dl.fbaipubl
 ### Training and evaluation
 
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/train_net_step.py --save_dir $SAVE_DIR --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --bs 4 --iter_size 2 --nw 4 --load_detectron data/pretrained_model/model_final.pkl
+CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/train_net_step.py --save_dir fsod_save_dir --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --bs 4 --iter_size 2 --nw 4 --load_detectron data/pretrained_model/model_final.pkl
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/test_net.py --multi-gpu-testing --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --load_ckpt Outputs/$SAVE_DIR/ckpt/model_step59999.pth
+CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/test_net.py --multi-gpu-testing --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --load_ckpt Outputs/fsod_save_dir/ckpt/model_step59999.pth
 ```
 
 The default setting is on 4 GPUs. If you want to change GPU numbers, please change `bs` in the training script and make sure `bs=#GPU`. If you want to use the default training setting on 4 GPUs, you can directly run `sh all.sh` to train and evaluate the model.
