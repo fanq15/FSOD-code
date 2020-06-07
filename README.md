@@ -23,7 +23,7 @@ Tested under python3.
   - packaging
   - [pycocotools](https://github.com/cocodataset/cocoapi)  — for COCO dataset, also available from pip.
   - tensorboardX  — for logging the losses in Tensorboard
-- An NVIDAI GPU and CUDA 8.0 or higher. Some operations only have gpu implementation.
+- An NVIDAI GPU and CUDA 9.0 are required. (Do not use other versions)
 - **NOTICE**: different versions of Pytorch package have different memory usages.
 
 ### Compilation
