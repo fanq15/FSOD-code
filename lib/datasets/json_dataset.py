@@ -262,8 +262,8 @@ class JsonDataset(object):
                 for k, v in self.json_category_id_to_contiguous_id.items()
             }
             #print(self.category_to_id_map, self.json_category_id_to_contiguous_id, self.contiguous_category_id_to_json_id)
-            with open('./data/VOC2012/ImageSets/Main/new_val.txt', 'w') as f:
-                f.write(txt_ls)
+            #with open('./data/VOC2012/ImageSets/Main/new_val.txt', 'w') as f:
+            #    f.write(txt_ls)
             # reutrn original_roidb for picking support images for each query episode, and final_roidb as query episode for evaluation.
             return roidb, final_roidb     
 
