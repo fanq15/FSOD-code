@@ -1,5 +1,9 @@
 # A Pytorch Implementation of FSOD
 
+## NEWS!
+
+Detectron2 based FSOD implementation is released in [FewX](https://github.com/fanq15/FewX)! It can reach **12.0** AP on MS COCO (10-shot)!
+
 ## Getting Started
 Clone the repo:
 
