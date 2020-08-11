@@ -195,8 +195,11 @@ def _do_python_eval(json_dataset, salt, output_dir='output'):
     for _, cls in enumerate(json_dataset.classes):
         if cls == '__background__':
             continue
-        filename = _get_voc_results_file_template(
-            json_dataset, salt).format(cls)
+        filedir = './data/fsod/Results'
+        assert os.path.exists(filedir):
+        filename = os.path.join(filedir, cls + '.txt')
+        #filename = _get_voc_results_file_template(
+        #    json_dataset, salt).format(cls)
         rec, prec, ap = voc_eval(
             filename, anno_path, recs, imagenames, cls, cachedir, ovthresh=0.75,
             use_07_metric=use_07_metric)
