@@ -77,8 +77,12 @@ def _write_voc_results_files(json_dataset, all_boxes, salt):
         if cls == '__background__':
             continue
         logger.info('Writing VOC results for: {}'.format(cls))
-        filename = _get_voc_results_file_template(json_dataset,
-                                                  salt).format(cls)
+        filedir = './data/fsod/Results'
+        if not os.path.exists(filedir):
+            os.makedirs(filedir)
+        filename = os.path.join(filedir, cls + '.txt')
+        #filename = _get_voc_results_file_template(json_dataset,
+        #                                          salt).format(cls)
         filenames.append(filename)
         assert len(all_boxes[cls_ind]) == len(image_index)
         with open(filename, 'wt') as f:
@@ -115,7 +119,8 @@ def _do_python_eval(json_dataset, salt, output_dir='output'):
     image_set_path = info['image_set_path']
     devkit_path = info['devkit_path']
     #cachedir = os.path.join(devkit_path, 'annotations_cache')
-    cachedir = os.path.join('data/VOC' + year, 'annotations_cache')
+    #cachedir = os.path.join('data/VOC' + year, 'annotations_cache')
+    cachedir = None # it is useless
     aps_50 = []
     cls_ls = []
     # The PASCAL VOC metric changed in 2010
@@ -158,8 +163,11 @@ def _do_python_eval(json_dataset, salt, output_dir='output'):
     for _, cls in enumerate(json_dataset.classes):
         if cls == '__background__':
             continue
-        filename = _get_voc_results_file_template(
-            json_dataset, salt).format(cls)
+        filedir = './data/fsod/Results'
+        assert os.path.exists(filedir):
+        filename = os.path.join(filedir, cls + '.txt')
+        #filename = _get_voc_results_file_template(
+        #    json_dataset, salt).format(cls)
         rec, prec, ap = voc_eval(
             filename, anno_path, recs, imagenames, cls, cachedir, ovthresh=0.5,
             use_07_metric=use_07_metric)
