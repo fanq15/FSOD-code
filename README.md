@@ -23,8 +23,9 @@ Tested under python3.
   - numpy
   - scipy
   - opencv
-  - pyyaml
+  - pyyaml==3.12
   - packaging
+  - pandas
   - [pycocotools](https://github.com/cocodataset/cocoapi)  — for COCO dataset, also available from pip.
   - tensorboardX  — for logging the losses in Tensorboard
 - An NVIDAI GPU and CUDA 9.0 are required. (Do not use other versions)
@@ -75,7 +76,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/train_net_step.py --save_dir fsod_sav
 CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/test_net.py --multi-gpu-testing --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --load_ckpt Outputs/fsod_save_dir/ckpt/model_step59999.pth
 ```
 
-The default setting is on 4 GPUs. If you want to change GPU numbers, please change `bs` in the training script and make sure `bs=#GPU`. If you want to use the default training setting on 4 GPUs, you can directly run `sh all.sh` to train and evaluate the model.
+The default setting is on 4 GPUs. If you want to change GPU numbers, please change `bs` in the training script and make sure `bs=#GPU`. If you want to use the default training setting on 4 GPUs, you can directly run `sh all.sh` to train and evaluate the model. The code currently only support 4 GPUs evaluation. If you use other GPU numbers, it may cause Nan result.
 
 ### Others
 
