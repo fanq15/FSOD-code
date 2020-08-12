@@ -2,6 +2,9 @@
 
 CUDA_PATH=/usr/local/cuda/
 
+export CXXFLAGS="-std=c++11"
+export CFLAGS="-std=c99"
+
 python3 setup.py build_ext --inplace
 rm -rf build
 
