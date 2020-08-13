@@ -76,11 +76,11 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/train_net_step.py --save_dir fsod_sav
 CUDA_VISIBLE_DEVICES=0,1,2,3 python3 tools/test_net.py --multi-gpu-testing --dataset fsod --cfg configs/fsod/voc_e2e_faster_rcnn_R-50-C4_1x_old_1.yaml --load_ckpt Outputs/fsod_save_dir/ckpt/model_step59999.pth
 ```
 
-The default setting is on 4 GPUs. If you want to change GPU numbers, please change `bs` in the training script and make sure `bs=#GPU`. If you want to use the default training setting on 4 GPUs, you can directly run `sh all.sh` to train and evaluate the model. The code currently only support 4 GPUs evaluation. If you use other GPU numbers, it may cause Nan result.
+The default setting is on 4 GPUs. If you want to change GPU numbers, please change `bs` in the training script and make sure `bs=#GPU`. If you want to use the default training setting on 4 GPUs, you can directly run `sh all.sh` to train and evaluate the model. 
 
 ### Others
 
-Please note that this repository is only for episode training and evaluation on FSOD dataset. Other expriments on different datasets are in different evaluation settings and I will gradually merge them. Currently, the code only supports 1 image on 1 GPU for both training and evaluation.
+Please note that this repository is only for episode training and evaluation on FSOD dataset. Other expriments on different datasets are in different evaluation settings and I will gradually merge them. Currently, the code only supports 1 image on per GPU for both training and evaluation.
 
 This repository is originally built on [roytseng-tw/Detectron.pytorch](https://github.com/roytseng-tw/Detectron.pytorch). You can reference it for more implementation details. 
 
